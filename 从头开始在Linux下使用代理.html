@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x5728;Linux&#x670d;&#x52a1;&#x5668;&#x4e2d;&#x4f7f;&#x7528;&#x4ee3;&#x7406;--ver&period;2024&period;5</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <ul>
+<li><a href="#%E5%9C%A8linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%AD%E4%BD%BF%E7%94%A8%E4%BB%A3%E7%90%86--ver20245">在Linux服务器中使用代理--ver.2024.5</a>
+<ul>
+<li><a href="#%E9%85%8D%E7%BD%AE%E7%8E%AF%E5%A2%83">配置环境</a>
+<ul>
+<li><a href="#%E8%AF%B7%E6%B3%A8%E6%84%8F99%E5%92%8C11%E5%B7%B2%E7%BB%8F%E9%85%8D%E7%BD%AE%E4%BA%86%E5%9F%BA%E6%9C%AC%E7%8E%AF%E5%A2%83%E5%A4%A7%E5%AE%B6%E4%BD%BF%E7%94%A8%E8%AF%B7%E7%9B%B4%E6%8E%A5%E4%BB%8E%E4%B8%8B%E8%BD%BD%E5%B9%B6%E4%BF%AE%E6%94%B9%E5%8E%9F%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%A7%8B">请注意！.99和.11已经配置了基本环境，大家使用请直接从下载并修改原项目开始</a></li>
+</ul>
+</li>
+<li><a href="#%E4%B8%8B%E8%BD%BD%E5%B9%B6%E4%BF%AE%E6%94%B9%E5%8E%9F%E9%A1%B9%E7%9B%AE">下载并修改原项目</a></li>
+<li><a href="#%E8%8A%82%E7%82%B9%E4%BF%A1%E6%81%AF%E9%85%8D%E7%BD%AE">节点信息配置</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8%E5%81%9C%E6%AD%A2%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99">启动/停止脚本编写</a></li>
+<li><a href="#%E5%90%AF%E5%8A%A8%E5%85%B3%E9%97%AD%E8%84%9A%E6%9C%AC">启动/关闭脚本</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="在linux服务器中使用代理--ver20245">在Linux服务器中使用代理--ver.2024.5</h1>
+<p>今天想下点东西，结果差点忘了自己配置的代理怎么用，以后我会多写文档做记录，分享给大家，助人助己。</p>
+<h2 id="配置环境">配置环境</h2>
+<h3 id="请注意99和11已经配置了基本环境大家使用请直接从下载并修改原项目开始">请注意！.99和.11已经配置了基本环境，大家使用请直接从<a href="#%E4%B8%8B%E8%BD%BD%E5%B9%B6%E4%BF%AE%E6%94%B9%E5%8E%9F%E9%A1%B9%E7%9B%AE">下载并修改原项目</a>开始</h3>
+<p>需要管理员权限，来安装libsodium和privoxy：</p>
+<pre><code class="language-shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">ubuntu</span>
+sudo apt install libsodium
+<span class="hljs-meta prompt_">#</span><span class="language-bash">centos</span>
+sudo yum install libsodium
+</code></pre>
+<pre><code class="language-shell"><span class="hljs-meta prompt_">#</span><span class="language-bash">ubuntu</span>
+sudo apt install -y privoxy
+<span class="hljs-meta prompt_">#</span><span class="language-bash">centos</span>
+sudo yum install -y provoxy
+</code></pre>
+<h2 id="下载并修改原项目">下载并修改原项目</h2>
+<pre><code class="language-shell">git clone https://github.com/dreamhunter2333/shadowsocksr.git
+</code></pre>
+<p>更正：原项目代码中有一处需要修改，等网络修好后，我会上传改好的代码至仓库。</p>
+<p>这里先贴出，仅此一处，右侧为更改结果：</p>
+<p><img src="file:////cluster/home/zhangyumeng/image.png" alt="alt text"></p>
+<h2 id="节点信息配置">节点信息配置</h2>
+<pre><code class="language-shell">cd yourpath/shadowsocksr/
+vim yourpath/shadowsocksr/config.json
+</code></pre>
+<p>执行这两个命令后，会看到配置文件内容如下：</p>
+<p><img src="file:////cluster/home/zhangyumeng/fujian/image1.png" alt="alt text"></p>
+<p>这时候，如果你有代理软件，比如SSR，或者Clash，又或者......总之，去查看每个节点的具体信息，填入这个配置文件。填写时遵循一个标准：<code>有就填，没有就不填，别乱填</code></p>
+<p>为了保证大家都能填对，下面举例演示：</p>
+<p>这是我的订阅节点信息：</p>
+<p><img src="file:////cluster/home/zhangyumeng/fujian/image2.png" alt="alt text"></p>
+<p>对照上面的原始配置文件中的字段:</p>
+<p><code>server</code>对应<code>服务器IP</code></p>
+<p><code>server_port</code>对应<code>服务器端口</code></p>
+<p><code>password</code>对应<code>密码</code></p>
+<p><code>method</code>对应<code>加密</code></p>
+<p><code>protocol</code>对应<code>协议</code></p>
+<p><code>protocol_param</code>对应<code>协议参数</code></p>
+<p><code>obfs</code>对应<code>混淆</code></p>
+<p>其余的选项，保持原文件的内容不变即可。</p>
+<h2 id="启动停止脚本编写">启动/停止脚本编写</h2>
+<p>我们每个用户的文件夹下都有一个隐藏文件夹<code>.local</code>，如果看不见，可用</p>
+<pre><code class="language-shell">ls -a
+</code></pre>
+<p>查看。在<code>.local</code>下，新建文件夹<code>bin</code>,放入启动和停止脚本（也可以自己新建脚本，复制内容进去即可）。</p>
+<p><img src="file:////cluster/home/zhangyumeng/fujian/image3.png" alt="bin"></p>
+<p>唯一需要注意的是，大家需要根据自己的路径修改runssr，只改这一行：</p>
+<pre><code class="language-shell">nohup python /cluster/home/zhangyumeng/shadowsocksr/shadowsocks/local.py -c /cluster/home/zhangyumeng/shadowsocksr/config.json &gt;&gt; /cluster/home/zhangyumeng/shadowsocksr/shadowsocks/ssserver.log 2&gt;&amp;1 &amp;
+</code></pre>
+<p>将这一行的三个路径都更改为你的路径下对应文件的位置。</p>
+<h2 id="启动关闭脚本">启动/关闭脚本</h2>
+<p>首次启动需要先让环境变量生效，以后便不需要。</p>
+<pre><code class="language-shell">source .bashrc
+</code></pre>
+<p>运行上面的命令后，环境变量生效，不起效就关闭这个命令行，新开一个命令行。</p>
+<p>这里应当注意，你需要有一个合适的虚拟环境！！！！，毕竟命令中有个python <a href="http://xxx.py">xxx.py</a>。</p>
+<p>建议先单独运行</p>
+<pre><code class="language-shell">python /cluster/home/zhangyumeng/shadowsocksr/shadowsocks/local.py -c /cluster/home/zhangyumeng/shadowsocksr/config.json
+</code></pre>
+<p>来查看报错，缺少哪个库装哪个。</p>
+<p>环境彻底完成后，<code>source runssr</code>启动应用，效果如图：</p>
+<p>注意：如果是在root账号下操作，启动privoxy服务时并不会弹出密码输入对话。</p>
+<p><img src="file:////cluster/home/zhangyumeng/fujian/image4.png" alt="alt text"></p>
+<p>输入服务器密码，会启动<code>privoxy.service</code>服务(默认为所有用户安装)。</p>
+<p>出现<code>COMPLETE</code>，启动成功。</p>
+<p><img src="file:////cluster/home/zhangyumeng/fujian/image5.png" alt="alt text"></p>
+<p>使用</p>
+<pre><code class="language-shell">curl www.google.com
+</code></pre>
+<p>测试网络是否通畅。</p>
+<p><img src="file:////cluster/home/zhangyumeng/fujian/image6.png" alt="alt text"></p>
+<p>返回了页面内容，成功。如果不返回，关闭应用，命令见下面，然后启动，再测试，往往就成功。</p>
+<p>使用<code>source stopssr</code>关闭应用，同样的，会再输入一次密码。</p>
+<p>经过测试，网络代理只在某一用户的账号下生效，不影响其他用户。</p>
+
+            
+            
+        </body>
+        </html>
