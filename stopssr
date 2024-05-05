@@ -2,3 +2,10 @@
 #This is the shell script to stop the shadowsocksR process.
 
 eval $(ps -ef | grep -v grep | grep local.py | awk '{ print "kill -9 " $2 }')
+
+# 关闭服务
+systemctl stop privoxy.service
+
+unset http_proxy
+unset https_proxy
+unset no_proxy
