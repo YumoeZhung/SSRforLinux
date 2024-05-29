@@ -34,3 +34,5 @@ htmlcov
 user-config.json
 userapiconfig.py
 usermysql.json
+fujian
+shadowsocks/ssserver.log

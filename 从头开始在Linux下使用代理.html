@@ -173,17 +173,17 @@ sudo yum install -y provoxy
 </code></pre>
 <p>更正：原项目代码中有一处需要修改，等网络修好后，我会上传改好的代码至仓库。</p>
 <p>这里先贴出，仅此一处，右侧为更改结果：</p>
-<p><img src="file:////cluster/home/zhangyumeng/image.png" alt="alt text"></p>
+<p><img src="./fujian/image.png" alt="alt text"></p>
 <h2 id="节点信息配置">节点信息配置</h2>
 <pre><code class="language-shell">cd yourpath/shadowsocksr/
 vim yourpath/shadowsocksr/config.json
 </code></pre>
 <p>执行这两个命令后，会看到配置文件内容如下：</p>
-<p><img src="file:////cluster/home/zhangyumeng/fujian/image1.png" alt="alt text"></p>
+<p><img src="./fujian/image1.png" alt="alt text"></p>
 <p>这时候，如果你有代理软件，比如SSR，或者Clash，又或者......总之，去查看每个节点的具体信息，填入这个配置文件。填写时遵循一个标准：<code>有就填，没有就不填，别乱填</code></p>
 <p>为了保证大家都能填对，下面举例演示：</p>
 <p>这是我的订阅节点信息：</p>
-<p><img src="file:////cluster/home/zhangyumeng/fujian/image2.png" alt="alt text"></p>
+<p><img src="./fujian/image2.png" alt="alt text"></p>
 <p>对照上面的原始配置文件中的字段:</p>
 <p><code>server</code>对应<code>服务器IP</code></p>
 <p><code>server_port</code>对应<code>服务器端口</code></p>
@@ -198,9 +198,9 @@ vim yourpath/shadowsocksr/config.json
 <pre><code class="language-shell">ls -a
 </code></pre>
 <p>查看。在<code>.local</code>下，新建文件夹<code>bin</code>,放入启动和停止脚本（也可以自己新建脚本，复制内容进去即可）。</p>
-<p><img src="file:////cluster/home/zhangyumeng/fujian/image3.png" alt="bin"></p>
+<p><img src="./fujian/image3.png" alt="bin"></p>
 <p>唯一需要注意的是，大家需要根据自己的路径修改runssr，只改这一行：</p>
-<pre><code class="language-shell">nohup python /cluster/home/zhangyumeng/shadowsocksr/shadowsocks/local.py -c /cluster/home/zhangyumeng/shadowsocksr/config.json &gt;&gt; /cluster/home/zhangyumeng/shadowsocksr/shadowsocks/ssserver.log 2&gt;&amp;1 &amp;
+<pre><code class="language-shell">nohup python ./shadowsocksr/shadowsocks/local.py -c ./shadowsocksr/config.json &gt;&gt; ./shadowsocksr/shadowsocks/ssserver.log 2&gt;&amp;1 &amp;
 </code></pre>
 <p>将这一行的三个路径都更改为你的路径下对应文件的位置。</p>
 <h2 id="启动关闭脚本">启动/关闭脚本</h2>
@@ -210,20 +210,20 @@ vim yourpath/shadowsocksr/config.json
 <p>运行上面的命令后，环境变量生效，不起效就关闭这个命令行，新开一个命令行。</p>
 <p>这里应当注意，你需要有一个合适的虚拟环境！！！！，毕竟命令中有个python <a href="http://xxx.py">xxx.py</a>。</p>
 <p>建议先单独运行</p>
-<pre><code class="language-shell">python /cluster/home/zhangyumeng/shadowsocksr/shadowsocks/local.py -c /cluster/home/zhangyumeng/shadowsocksr/config.json
+<pre><code class="language-shell">python ./shadowsocksr/shadowsocks/local.py -c ./shadowsocksr/config.json
 </code></pre>
 <p>来查看报错，缺少哪个库装哪个。</p>
 <p>环境彻底完成后，<code>source runssr</code>启动应用，效果如图：</p>
 <p>注意：如果是在root账号下操作，启动privoxy服务时并不会弹出密码输入对话。</p>
-<p><img src="file:////cluster/home/zhangyumeng/fujian/image4.png" alt="alt text"></p>
+<p><img src="./fujian/image4.png" alt="alt text"></p>
 <p>输入服务器密码，会启动<code>privoxy.service</code>服务(默认为所有用户安装)。</p>
 <p>出现<code>COMPLETE</code>，启动成功。</p>
-<p><img src="file:////cluster/home/zhangyumeng/fujian/image5.png" alt="alt text"></p>
+<p><img src="./fujian/image5.png" alt="alt text"></p>
 <p>使用</p>
 <pre><code class="language-shell">curl www.google.com
 </code></pre>
 <p>测试网络是否通畅。</p>
-<p><img src="file:////cluster/home/zhangyumeng/fujian/image6.png" alt="alt text"></p>
+<p><img src="./fujian/image6.png" alt="alt text"></p>
 <p>返回了页面内容，成功。如果不返回，关闭应用，命令见下面，然后启动，再测试，往往就成功。</p>
 <p>使用<code>source stopssr</code>关闭应用，同样的，会再输入一次密码。</p>
 <p>经过测试，网络代理只在某一用户的账号下生效，不影响其他用户。</p>

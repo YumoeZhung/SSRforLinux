@@ -33,7 +33,7 @@ git clone https://github.com/dreamhunter2333/shadowsocksr.git
 
 这里先贴出，仅此一处，右侧为更改结果：
 
-![alt text](image.png)
+![alt text](./fujian/image.png)
 
 ## 节点信息配置
 ```shell
